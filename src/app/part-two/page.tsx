@@ -29,7 +29,6 @@ const PartTwo = () => {
           <>
             <div className="flex gap-4 items-baseline">
               <span className="font-[500] ">تسویه کیف پول</span>
-              {"  "}
               <span className="text-gray-dark text-[12px]">اصلی زیب</span>
             </div>
             <Divider />
