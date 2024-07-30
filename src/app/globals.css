@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.ant-table-tbody{
+  text-align: center !important;
+}
+
+
+.ant-table-cell{
+  text-align: center !important;
+}
+
 .ant-table-cell::before {
   background-color: transparent !important;
 }
@@ -9,3 +19,9 @@
 .rtlModal {
   direction: rtl;
 }
+
+.ltr{
+  direction: ltr;
+  text-align: center;
+}
+

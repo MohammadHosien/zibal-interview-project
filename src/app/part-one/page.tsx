@@ -1,7 +1,7 @@
-import TransactionTable from "@/components/TransactionTable/TransactionTable"
+import TransactionTable from "@/components/TransactionTable/TransactionTable";
 
-const Partone=()=>{
-  return <TransactionTable/>
-}
+const Partone = () => {
+  return <TransactionTable />;
+};
 
-export default Partone
+export default Partone;

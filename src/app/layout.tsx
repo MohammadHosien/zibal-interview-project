@@ -25,6 +25,7 @@ export default function RootLayout({
         <ToastContainer position="bottom-right" />
         <AntdStyledComponentsRegistry>
           <ConfigProvider
+          direction="rtl"
             theme={{
               token: {
                 colorPrimary: "#3A3ADB",

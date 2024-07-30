@@ -13,44 +13,8 @@ const TransactionTable = () => {
     numberCart: "",
     trackId: "",
   });
-  
-  const columns = [
-    {
-      title: (
-        <SearchButton
-          value={searchInputValue.numberCart}
-          onChange={(d) => {
-            setSearchInputValue({ ...searchInputValue, numberCart: d });
-          }}
-          label="شماره کارت"
-        />
-      ),
-      dataIndex: "cardNumber",
-      key: "cardNumber",
-    },
-    {
-      title: "تاریخ پرداخت",
-      dataIndex: "paidAt",
-      key: "paidAt",
-    },
-    {
-      title: "مبلغ",
-      dataIndex: "amount",
-      key: "amount",
-      render: (text: string) => (
-        <div className="flex flex-row font-[500]">
-          <div>ریال</div>
-          {text.toLocaleString()}
-        </div>
-      ),
-    },
-    {
-      title: "وضعیت تراکنش",
-      dataIndex: "status",
-      key: "status",
-      render: (text: number) => <StatusBadage text={text} />,
-    },
 
+  const columns = [
     {
       title: (
         <SearchButton
@@ -65,7 +29,7 @@ const TransactionTable = () => {
       key: "trackId",
       render: (text: string) => (
         <div
-          className="flex gap-2 items-center"
+          className="inline-flex items-center flex-row-reverse gap-2"
           onClick={() => {
             navigator.clipboard
               .writeText(text)
@@ -81,6 +45,42 @@ const TransactionTable = () => {
           {text}
         </div>
       ),
+    },
+    {
+      title: "وضعیت تراکنش",
+      dataIndex: "status",
+      key: "status",
+      render: (text: number) => <StatusBadage text={text} />,
+    },
+    {
+      title: "مبلغ",
+      dataIndex: "amount",
+      key: "amount",
+      render: (text: string) => (
+        <div className="inline-flex flex-row">
+          <div className="font-[500]">{text.toLocaleString()}</div>
+          <div>ریال</div>
+        </div>
+      ),
+    },
+    {
+      title: "تاریخ پرداخت",
+      dataIndex: "paidAt",
+      key: "paidAt",
+    },
+    {
+      title: (
+        <SearchButton
+          value={searchInputValue.numberCart}
+          onChange={(d) => {
+            setSearchInputValue({ ...searchInputValue, numberCart: d });
+          }}
+          label="شماره کارت"
+        />
+      ),
+      dataIndex: "cardNumber",
+      key: "cardNumber",
+      render: (text: string) => <div className="ltr">{text}</div>,
     },
   ];
 
@@ -111,9 +111,8 @@ const TransactionTable = () => {
       rowClassName={(record, index) =>
         index % 2 === 0 ? "bg-white-base" : "bg-gray-light"
       }
-      direction="rtl"
       footer={() => (
-        <div className="text-end font-[500]">
+        <div className="font-[500] px-6">
           تعداد نتایج {filterdTransationData.length}
         </div>
       )}

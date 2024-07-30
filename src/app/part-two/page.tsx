@@ -34,7 +34,6 @@ const PartTwo = () => {
             <Divider />
           </>
         }
-        className="rtlModal"
         okButtonProps={{ style: { display: "none" } }}
         cancelButtonProps={{ style: { display: "none" } }}
         open={isModalOpen}

@@ -36,8 +36,7 @@ const SearchButton = ({
   }, [isInput]);
 
   return !isInput ? (
-    <div className="flex items-center gap-2">
-      {label}
+    <div className="inline-flex items-center gap-2">
       <div
         onClick={() => {
           setIsinput(true);
@@ -46,6 +45,7 @@ const SearchButton = ({
       >
         <FaSearch className="fill-white-base" size={12} />
       </div>
+      {label}
     </div>
   ) : (
     <input
