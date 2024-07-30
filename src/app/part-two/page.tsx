@@ -24,6 +24,7 @@ const PartTwo = () => {
         تسویه حساب
       </Button>
       <Modal
+        className="top-0"
         title={
           <>
             <div className="flex gap-4 items-baseline">
